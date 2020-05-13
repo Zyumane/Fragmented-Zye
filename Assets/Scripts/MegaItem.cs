@@ -5,14 +5,17 @@ using UnityEngine;
 public class MegaItem : MonoBehaviour
 {
     public bool[] fragments;
+
     public MegaItem()
     {
         fragments = new bool[4];
     }
+
     public void AddFragment(Item i)
     {
         fragments[i.fragmentid] = true;
     }
+
     public bool Completed()
     {
         bool flag = true;
@@ -20,16 +23,14 @@ public class MegaItem : MonoBehaviour
             flag = flag && frament;
         return flag;
     }
+
     public bool SpecialAction()
     {
         if (!Completed())
+        {
             return false;
-
-        /*
-         * Accion especial
-         */
-
-
+        }
+        
         return true;
     }
 }

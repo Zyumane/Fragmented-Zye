@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
+    public ItemType type;
+    public string label;
+    public int fragmentid;
 
     public enum ItemType
     {
@@ -12,9 +15,7 @@ public class Item : MonoBehaviour
         POTION = 2,
         FRAGMENT = 3
     }
-    public ItemType type;
-    public string label;
-    public int fragmentid;
+
     public void Consume()
     {
         gameObject.SetActive(false);

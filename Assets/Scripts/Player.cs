@@ -64,21 +64,24 @@ public class Player : MonoBehaviour
                         mitem.AddFragment(item);
                         break;
                 }
-                RefreshUI();
+                //RefreshUI();
             }
         }
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("tooth");
         iscolliding = true;
         collision = other.gameObject;
     }
     private void OnTriggerExit(Collider other)
     {
+        Debug.Log("tooth");
         iscolliding = false;
         collision = null;
     }
+    
     public void RefreshUI()
     {
         uitext.text = "Exp: " + exp + "\n";
@@ -86,4 +89,5 @@ public class Player : MonoBehaviour
         uitext.text += "MP: " + mp + "/100\n";
         uitext.text += "MegaItem Ready: " + mitem.Completed().ToString() + "\n";
     }
+    
 }
