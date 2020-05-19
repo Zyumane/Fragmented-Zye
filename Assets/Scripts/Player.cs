@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    public int exp;
+    //public int exp;
     public int hp;
-    public int mp;
+    //public int mp;
     public MegaItem mitem;
 
     public Text uitext;
@@ -47,24 +47,24 @@ public class Player : MonoBehaviour
             {
                 switch (item.type)
                 {
-                    case Item.ItemType.EXP:
+                    /*case Item.ItemType.EXP:
                         exp += 10;
-                        break;
+                        break;*/
                     case Item.ItemType.HEART:
                         hp += 10;
                         if (hp > 100)
                             hp = 100;
                         break;
-                    case Item.ItemType.POTION:
+                    /*case Item.ItemType.POTION:
                         mp += 10;
                         if (mp > 100)
                             mp = 100;
-                        break;
+                        break;*/
                     case Item.ItemType.FRAGMENT:
                         mitem.AddFragment(item);
                         break;
                 }
-                //RefreshUI();
+                RefreshUI();
             }
         }
     }
@@ -84,9 +84,9 @@ public class Player : MonoBehaviour
     
     public void RefreshUI()
     {
-        uitext.text = "Exp: " + exp + "\n";
+        //uitext.text = "Exp: " + exp + "\n";
         uitext.text += "HP: " + hp + "/100\n";
-        uitext.text += "MP: " + mp + "/100\n";
+        //uitext.text += "MP: " + mp + "/100\n";
         uitext.text += "MegaItem Ready: " + mitem.Completed().ToString() + "\n";
     }
     

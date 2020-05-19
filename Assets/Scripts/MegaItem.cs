@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class MegaItem : MonoBehaviour
 {
+    [SerializeField]
+    private int _fragted_piece = 4;
+
     public bool[] fragments;
 
     public MegaItem()
     {
-        fragments = new bool[4];
+        fragments = new bool[_fragted_piece];
     }
 
     public void AddFragment(Item i)
@@ -28,8 +31,11 @@ public class MegaItem : MonoBehaviour
     {
         if (!Completed())
         {
+            Debug.Log("Cook ");
             return false;
         }
+        Debug.Log("bloop ");
+        GameObject.CreatePrimitive(PrimitiveType.Cube);
         
         return true;
     }
