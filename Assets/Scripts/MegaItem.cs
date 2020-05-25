@@ -5,7 +5,7 @@ using UnityEngine;
 public class MegaItem : MonoBehaviour
 {
     [SerializeField]
-    private int _fragted_piece = 4;
+    private int _fragted_piece = 3;
 
     public bool[] fragments;
 
@@ -27,13 +27,15 @@ public class MegaItem : MonoBehaviour
         return flag;
     }
 
-    public bool SpecialAction()
+    public bool MegaitemComplete()
     {
         if (!Completed())
         {
+            //ui
             Debug.Log("Cook ");
             return false;
         }
+
         Debug.Log("bloop ");
         GameObject.CreatePrimitive(PrimitiveType.Cube);
         
