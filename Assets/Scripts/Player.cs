@@ -28,6 +28,9 @@ public class Player : MonoBehaviour
     [SerializeField]
     private Transform cam;
 
+    [Range(1, 10)]
+    public Vector3 jumpVel;
+
 
     void Start()
     {
@@ -64,6 +67,14 @@ public class Player : MonoBehaviour
         uitext.text += "MegaItem Ready: " + mitem.Completed().ToString() + "\n";
     }
 
+    public void jumpAct()
+    {
+        if(Input.GetButtonDown("jump"))
+        {
+            GetComponent<Rigidbody>().velocity = new Vector3().y * jumpVel;
+        }
+    }
+
     public void MoveInputPlyr()
     {
         float deltaz = Input.GetAxis("Vertical");
@@ -71,12 +82,15 @@ public class Player : MonoBehaviour
 
         rbody.velocity = speed * new Vector3(deltax, 0, deltaz);
 
+        jumpAct();
+
         if (iscolliding && collision != null && Input.GetKeyDown(KeyCode.E))
         {
             inventory.AddItem(collision.GetComponent<Item>());
             iscolliding = false;
             collision = null;
         }
+
         if (Input.GetKeyDown(KeyCode.Q))
         {
             Item item = inventory.Use();
@@ -104,6 +118,7 @@ public class Player : MonoBehaviour
                 RefreshUI();
             }
         }
+
     }
 
     public void NewPlyrMov()
@@ -158,7 +173,5 @@ public class Player : MonoBehaviour
                 RefreshUI();
             }
         }
-
     }
-    
 }

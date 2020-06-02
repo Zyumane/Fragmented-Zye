@@ -9,4 +9,7 @@ public class CardIdentity : ScriptableObject
     public int cardNum;
     public string nameOfTheCard;
     public bool[] fragmentCheck;
+
+    [SerializeField]
+    private Dictionary<string, GameObject> _keytest;
 }
