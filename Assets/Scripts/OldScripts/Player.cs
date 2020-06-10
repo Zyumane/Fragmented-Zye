@@ -9,13 +9,11 @@ public class Player : MonoBehaviour
     public int hp;
     //public int mp;
     public MegaItem mitem;
-
-    public Text uitext;
-
+    public Text uitext; 
     public float speed;
+
     private Rigidbody rbody;
     private inventory inventory;
-
     private GameObject collision;
     private bool iscolliding;
 
@@ -43,7 +41,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         //MoveInputPlyr();
-
+        jumpAct();
         NewPlyrMov();
     }
 
@@ -153,19 +151,11 @@ public class Player : MonoBehaviour
             {
                 switch (item.type)
                 {
-                    /*case Item.ItemType.EXP:
-                        exp += 10;
-                        break;*/
                     case Item.ItemType.HEART:
                         hp += 10;
                         if (hp > 100)
                             hp = 100;
                         break;
-                    /*case Item.ItemType.POTION:
-                        mp += 10;
-                        if (mp > 100)
-                            mp = 100;
-                        break;*/
                     case Item.ItemType.FRAGMENT:
                         mitem.AddFragment(item);
                         break;

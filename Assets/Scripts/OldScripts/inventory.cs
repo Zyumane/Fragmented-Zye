@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
 public enum CardFragment
 {
     Fragment_A = 0,
@@ -62,7 +61,7 @@ public enum Deck
     Card_no_39  = 38,
     Card_no_40  = 39,
     Card_no_41  = 40,
-}                
+}   //son cartas para identificar
 
 [System.Serializable]
 public class Frag_Qua_Card
@@ -85,14 +84,15 @@ public class Qua_frag_converter
 }
 
 
-
-
-
 public class inventory : MonoBehaviour
 {
     public Queue<Item> items;
+    public List<Frag_Qua_Card> Frag_s;
     public Text uitext;
     public int max = 10;
+
+    public TabGroup Tab;
+    public TabGroup btn;
 
     public Qua_frag_converter[] Qua_Frag_s;
     public Frag_Qua_Card[] frag_Quas;
@@ -100,6 +100,7 @@ public class inventory : MonoBehaviour
     private void Start()
     {
         items = new Queue<Item>();
+        Frag_s = new List<Frag_Qua_Card>();
     }
 
     public void AddItem(Item item)
@@ -112,6 +113,7 @@ public class inventory : MonoBehaviour
         {
             items.Enqueue(item);
             item.Consume();
+            
         }
         RefreshUI();
     }

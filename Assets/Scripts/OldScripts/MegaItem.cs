@@ -5,13 +5,13 @@ using UnityEngine;
 public class MegaItem : MonoBehaviour
 {
     [SerializeField]
-    private int _fragted_piece = 3;
+    private int _fragted_piece = Random.Range(3,5);
 
     public bool[] fragments;
 
     public MegaItem()
     {
-        fragments = new bool[_fragted_piece];
+        fragments = new bool[3];
     }
 
     public void AddFragment(Item i)

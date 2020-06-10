@@ -19,7 +19,7 @@ public class MenuManager : MonoBehaviour
     {
         allSlots = 40;
 
-        slots = new GameObject(allSlots);
+        slots = new List<GameObject>();
 
         for (int i = 0; i < allSlots; i++)
         {
