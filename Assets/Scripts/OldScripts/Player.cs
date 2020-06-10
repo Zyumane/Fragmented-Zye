@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         //MoveInputPlyr();
-        jumpAct();
+        //jumpAct();
         NewPlyrMov();
     }
 
@@ -67,7 +67,7 @@ public class Player : MonoBehaviour
 
     public void jumpAct()
     {
-        if(Input.GetButtonDown("jump"))
+        if(Input.GetButtonDown("Jump"))
         {
             GetComponent<Rigidbody>().velocity = new Vector3().y * jumpVel;
         }
