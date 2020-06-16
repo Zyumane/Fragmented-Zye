@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(Image))]
-public class TabButton : MonoBehaviour, IPointerEnterHandler,IPointerClickHandler,IPointerExitHandler
+public class TabButton : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler, IPointerExitHandler
 {
     public TabGroup tabGrouper;
 
@@ -17,7 +17,7 @@ public class TabButton : MonoBehaviour, IPointerEnterHandler,IPointerClickHandle
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        tabGrouper.OnTabSelected(this);    
+        tabGrouper.OnTabSelected(this);
     }
 
     public void OnPointerEnter(PointerEventData eventData)

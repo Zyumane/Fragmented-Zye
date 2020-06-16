@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Solid
+  - Material_Rqst
   layers:
   - Default
   - TransparentFX

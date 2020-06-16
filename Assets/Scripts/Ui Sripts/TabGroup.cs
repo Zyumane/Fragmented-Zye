@@ -14,7 +14,7 @@ public class TabGroup : MonoBehaviour
 
     public void Subscribe(TabButton button)
     {
-        if(tabsButtons == null)
+        if (tabsButtons == null)
         {
             tabsButtons = new List<TabButton>();
         }
@@ -25,7 +25,7 @@ public class TabGroup : MonoBehaviour
     public void OnTabEnter(TabButton button)
     {
         ResetTabs();
-        if(selectedTab == null || button != selectedTab)
+        if (selectedTab == null || button != selectedTab)
         {
             button.backgroundB.sprite = tabHover;
         }
@@ -38,7 +38,7 @@ public class TabGroup : MonoBehaviour
 
     public void OnTabSelected(TabButton button)
     {
-        if(selectedTab != null)
+        if (selectedTab != null)
         {
             selectedTab.Deselect();
         }
@@ -51,7 +51,7 @@ public class TabGroup : MonoBehaviour
         button.backgroundB.sprite = tabActive;
 
         int index = button.transform.GetSiblingIndex();
-        for (int i = 0; i < objectsToShow.Count; i++) 
+        for (int i = 0; i < objectsToShow.Count; i++)
         {
             if (i == index)
             {
@@ -66,9 +66,9 @@ public class TabGroup : MonoBehaviour
 
     public void ResetTabs()
     {
-        foreach(TabButton button in tabsButtons)
+        foreach (TabButton button in tabsButtons)
         {
-            if (selectedTab != null && button == selectedTab)  
+            if (selectedTab != null && button == selectedTab)
             {
                 continue;
             }
