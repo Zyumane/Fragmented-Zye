@@ -120,10 +120,8 @@ public class Main_Inventory : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.T)) 
         {
-            for (int y = 0; y < idenC.Length; y++)
-            {
-                GoalCondition();
-            }
+            TransformMat(Card_List.Card_Name_A);
+            GoalCondition();
         }
         
     }

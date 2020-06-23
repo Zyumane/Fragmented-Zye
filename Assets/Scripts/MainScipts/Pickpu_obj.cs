@@ -8,11 +8,15 @@ public class Pickpu_obj : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.name.Contains("Material_Rqst"))
+        Material_Req material_rq = other.gameObject.GetComponent<Material_Req>();
+    
+        if(material_rq != null)
         {
-            inventoryM.AddMaterialequest(other.gameObject.GetComponent<Material_Req>().material, 1);
+            inventoryM.AddMaterialequest(material_rq.material, 1);
 
             other.gameObject.SetActive(false);
+
+            Debug.Log("picked");
         }
     }
 }
